@@ -9,12 +9,13 @@ def get_weather(city):
           }
   response = requests.get(f'{URL}{city}', params=params)
   response.raise_for_status()
-  return(response.text)
+  return response.text 
 
 def main():
   cities = ['Лондон', 'Шереметьево', 'Череповец']
   for city in cities: 
-    print(get_weather(city))
+    weather = get_weather(city)
+    print(weather)
 
 if __name__ == '__main__':
   main()
